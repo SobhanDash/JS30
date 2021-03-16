@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+<body>
+
+
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+
+
+  <style>
+    html {
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+      background: #320846 url(bg.jpg);
+      background-size: cover;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px  whitesmoke;
+      border-radius: 2rem;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow: 0 1px 0 0 rgb(225 131 194 / 25%), 
+                  0 -1px 0 0 rgb(165 181 222 / 25%), 
+                  1px 0 0 0 rgb(225 131 194 / 25%), 
+                  -1px 0 0 0 rgb(165 181 222 / 25%),
+                  1px -1px 0 0 rgb(195 156 208 / 50%),
+                  -1px 1px 0 0 rgb(195 156 208 / 50%), 
+                  1px 1px 0 0 rgb(255 105 180 / 75%), 
+                  -1px -1px 0 0 rgb(135 206 235 / 75%);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+      border-radius: 2rem;
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s;
+      transition-timing-function: ease-in-out;
+      box-shadow: 0 1px 0 0 rgb(225 131 194 / 25%), 
+                  0 -1px 0 0 rgb(165 181 222 / 25%), 
+                  1px 0 0 0 rgb(225 131 194 / 25%), 
+                  -1px 0 0 0 rgb(165 181 222 / 25%),
+                  1px -1px 0 0 rgb(195 156 208 / 50%),
+                  -1px 1px 0 0 rgb(195 156 208 / 50%), 
+                  1px 1px 0 0 rgb(255 105 180 / 75%), 
+                  -1px -1px 0 0 rgb(135 206 235 / 75%);
+    }
+
+  </style>
+
+  <script>
+      const secondHand = document.querySelector('.second-hand');
+      const minuteHand = document.querySelector('.min-hand');
+      const hourHand = document.querySelector('.hour-hand');
+
+      function setDate(){
+            const now = new Date();
+
+            const seconds = now.getSeconds();
+            const secondsDegrees = ((seconds / 60) * 360) + 90;
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`
+            // console.log(seconds);
+
+            const mins = now.getMinutes();
+            const minDegrees = ((mins / 60) * 360) + ((seconds / 60) * 6) + 90;
+            minuteHand.style.transform = `rotate(${minDegrees}deg)`
+            // console.log(mins);
+
+            const hour = now.getHours();
+            const hourDegrees = ((hour / 12) * 360) + ((mins / 60) * 30) + 90;
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`
+            //console.log(hour);
+      }
+
+      setInterval(setDate, 1000);
+  </script>
+</body>
+</html>
+
