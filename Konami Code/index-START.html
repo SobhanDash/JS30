@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Key Detection</title>
+		<script
+			type="text/javascript"
+			src="https://www.cornify.com/js/cornify.js"
+		></script>
+	</head>
+	<body>
+    <h1 style="color: rgb(61, 9, 145); text-align: center;">There's an easter Egg. Find it</h1>
+		<script>
+			const pressed = []
+			const easterCode = "ArrowUpArrowDownArrowUpArrowDownwads"
+
+			window.addEventListener("keyup", (e) => {
+				// console.log(e.key)
+				pressed.push(e.key)
+				pressed.splice(
+					-easterCode.length - 1,
+					pressed.length - easterCode.length
+				)
+				if (pressed.join("").includes(easterCode)) {
+					console.log("Welcome young Padawan!")
+					cornify_add()
+				}
+				// console.log(pressed)
+			})
+		</script>
+	</body>
+</html>
