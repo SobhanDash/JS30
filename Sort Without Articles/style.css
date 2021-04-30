@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+    display: flex;
+    height: 100vh;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    color:#6f00ff ;
+}
+
+#movies {
+    font-size: 20px;
+    background: #1b1b1b;
+    width: 500px;
+    margin: auto;
+    padding: 0;
+    box-shadow: 0 0 5px 10px rgba(235, 229, 229, 0.356);
+    list-style: inside square ;
+}
+
+#movies li {
+    border-bottom: 1px solid #080808;
+    padding: 15px;
+}
+
+#movies li:last-child {
+    border-bottom: 0;
+}
+
+a{
+    color: #4c00ff;
+    text-decoration: none;
+}

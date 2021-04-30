@@ -1,0 +1,15 @@
+const bands = [
+	"The Prestige",
+	"The Edge of Tomorrow",
+	"Insidious",
+	"A Star is Born",
+	"The Conjuring",
+	"Batman v Superman",
+	"The Matrix",
+	"A Bug's Life",
+	"Star Wars",
+	"Interstellar",
+	"A Nightmare on Elm Street",
+	"Fight Club",
+	"Avengers: Endgame",
+]
