@@ -1,22 +1,22 @@
 body {
     margin: 0;
     padding: 0;
-    background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+    background: url("http://unsplash.it/2000/2000");
     display: flex;
     height: 100vh;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
-    color:#6f00ff ;
+    color:rgb(85, 26, 202) ;
 }
 
 #movies {
     font-size: 20px;
-    background: #1b1b1b;
+    background: rgba(27, 27, 27, 0.801);
     width: 500px;
     margin: auto;
     padding: 0;
-    box-shadow: 0 0 5px 10px rgba(235, 229, 229, 0.356);
+    box-shadow: 0 0 5px 10px rgba(150, 145, 145, 0.404);
     list-style: inside square ;
 }
 
@@ -30,6 +30,6 @@ body {
 }
 
 a{
-    color: #4c00ff;
+    color: rgba(221, 214, 238, 0.904);
     text-decoration: none;
 }
