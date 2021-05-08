@@ -1,6 +1,19 @@
 const addItems = document.querySelector(".add-items")
 const itemsList = document.querySelector(".plates")
-const items = JSON.parse(localStorage.getItem("items")) || []
+let items = JSON.parse(localStorage.getItem("items")) || []
+const clrAll = document.querySelector('.delAll')
+
+// clrAll.addEventListener('click',  ()=> {
+// 	itemsList.innerHTML = ""
+// 	localStorage.clear()
+// 	items = JSON.parse(localStorage.getItem("items")) || []
+// })
+
+function delItem() {
+	itemsList.innerHTML = ""
+	localStorage.clear()
+	items = JSON.parse(localStorage.getItem("items")) || []
+}
 
 function addItem(e) {
 	e.preventDefault()
@@ -43,15 +56,7 @@ function toggleBox(e) {
 	populateList(items, itemsList)
 }
 
-function delItem() {
-	let checkboxes = document.querySelectorAll('input[type="checkbox"]')
-	for (var i = 0; i < checkboxes.length; i++) {
-		localStorage.removeItem("items")
-		populateList(items, itemsList)
-	}
-	
-	
-}
+
 
 function checkAll(source) {
 	let checkboxes = document.querySelectorAll('input[type="checkbox"]')
@@ -70,7 +75,7 @@ function uncheckAll(source) {
 }
 
 addItems.addEventListener("submit", addItem)
-itemsList.addEventListener("submit", delItem)
+clrAll.addEventListener("click", delItem)
 itemsList.addEventListener("submit", checkAll)
 itemsList.addEventListener("submit", uncheckAll)
 itemsList.addEventListener("click", toggleBox)
