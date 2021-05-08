@@ -43,7 +43,36 @@ function toggleBox(e) {
 	populateList(items, itemsList)
 }
 
+function delItem() {
+	let checkboxes = document.querySelectorAll('input[type="checkbox"]')
+	for (var i = 0; i < checkboxes.length; i++) {
+		localStorage.removeItem("items")
+		populateList(items, itemsList)
+	}
+	
+	
+}
+
+function checkAll(source) {
+	let checkboxes = document.querySelectorAll('input[type="checkbox"]')
+	for (var i = 0; i < checkboxes.length; i++) {
+		if (checkboxes[i] = source) 
+			checkboxes[i].checked = !source.checked
+	}
+}
+
+function uncheckAll(source) {
+	let checkboxes = document.querySelectorAll('input[type="checkbox"]')
+	for (var i = 0; i < checkboxes.length; i++) {
+		if ((checkboxes[i] != source)) 
+			checkboxes[i].checked = source.checked
+	}
+}
+
 addItems.addEventListener("submit", addItem)
+itemsList.addEventListener("submit", delItem)
+itemsList.addEventListener("submit", checkAll)
+itemsList.addEventListener("submit", uncheckAll)
 itemsList.addEventListener("click", toggleBox)
 
 populateList(items, itemsList)
