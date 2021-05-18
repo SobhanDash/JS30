@@ -2,20 +2,20 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+*, *:before, *:after{
+  box-sizing: border-box;
 }
 
-html {
-  font-size: 10px;
-  background: #ffc600;
+html{
+  font-size: 1rem;
+  background: #1298aa;
 }
 
-.photobooth {
-  background: white;
+.photobooth{
+  background: #0cf3a6;
   max-width: 150rem;
   margin: 2rem auto;
-  border-radius: 2px;
+  border-radius: 1.3rem;
 }
 
 /*clearfix*/
@@ -32,9 +32,9 @@ html {
 
 .player {
   position: absolute;
-  top: 20px;
+  top: 50px;
   right: 20px;
-  width:200px;
+  width: 150px;
 }
 
 /*
